@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>BQ之殿的博客</title>
+  <title>React-Native初探遇到的问题 | BQ之殿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: React-Native初探遇到的问题tags: [React-Native,iOS]date: 2017-04-03
-缘起正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
-其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现">
+  <meta name="description" content="缘起正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
+其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现在公司内部的也有自己的一套iOS布局框架，也很类似，所以，个人还是蛮容易接受RN的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BQ之殿的博客">
+<meta property="og:title" content="React-Native初探遇到的问题">
 <meta property="og:url" content="www.huangbingqi.com/2017/04/03/React-Native初探遇到的问题/index.html">
 <meta property="og:site_name" content="BQ之殿的博客">
-<meta property="og:description" content="title: React-Native初探遇到的问题tags: [React-Native,iOS]date: 2017-04-03
-缘起正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
-其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现">
-<meta property="og:updated_time" content="2017-04-03T04:55:38.000Z">
+<meta property="og:description" content="缘起正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
+其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现在公司内部的也有自己的一套iOS布局框架，也很类似，所以，个人还是蛮容易接受RN的。">
+<meta property="og:updated_time" content="2017-04-03T06:34:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BQ之殿的博客">
-<meta name="twitter:description" content="title: React-Native初探遇到的问题tags: [React-Native,iOS]date: 2017-04-03
-缘起正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
-其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现">
+<meta name="twitter:title" content="React-Native初探遇到的问题">
+<meta name="twitter:description" content="缘起正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
+其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现在公司内部的也有自己的一套iOS布局框架，也很类似，所以，个人还是蛮容易接受RN的。">
   
     <link rel="alternative" href="/atom.xml" title="BQ之殿的博客" type="application/atom+xml">
   
@@ -114,7 +111,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/README-md写法/" style="font-size: 10px;">README.md写法</a> <a href="/tags/iOS开发/" style="font-size: 10px;">iOS开发</a> <a href="/tags/mac/" style="font-size: 20px;">mac</a> <a href="/tags/macbook/" style="font-size: 10px;">macbook</a> <a href="/tags/mutating-method/" style="font-size: 10px;">mutating method</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/mysql5-7-10/" style="font-size: 10px;">mysql5.7.10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/双系统/" style="font-size: 10px;">双系统</a> <a href="/tags/合并分区/" style="font-size: 10px;">合并分区</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/README-md写法/" style="font-size: 10px;">README.md写法</a> <a href="/tags/React-Native/" style="font-size: 10px;">React-Native</a> <a href="/tags/genstring/" style="font-size: 10px;">genstring</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS开发/" style="font-size: 20px;">iOS开发</a> <a href="/tags/mac/" style="font-size: 20px;">mac</a> <a href="/tags/macbook/" style="font-size: 10px;">macbook</a> <a href="/tags/mutating-method/" style="font-size: 10px;">mutating method</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/mysql5-7-10/" style="font-size: 10px;">mysql5.7.10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/双系统/" style="font-size: 10px;">双系统</a> <a href="/tags/合并分区/" style="font-size: 10px;">合并分区</a> <a href="/tags/本地化/" style="font-size: 10px;">本地化</a>
 					</div>
 				</section>
 				
@@ -180,7 +177,7 @@
   
     <div class="article-meta">
       <a href="/2017/04/03/React-Native初探遇到的问题/" class="article-date">
-  	<time datetime="2017-04-02T18:16:42.000Z" itemprop="datePublished">2017-04-03</time>
+  	<time datetime="2017-04-02T16:00:00.000Z" itemprop="datePublished">2017-04-03</time>
 </a>
     </div>
   
@@ -189,10 +186,31 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React-Native初探遇到的问题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: React-Native初探遇到的问题<br>tags: [React-Native,iOS]<br>date: 2017-04-03</p>
-<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><pre><code>正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
+        <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><pre><code>正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
 其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现在公司内部的也有自己的一套iOS布局框架，也很类似，所以，个人还是蛮容易接受RN的。
 </code></pre><a id="more"></a>
 <h2 id="遇到的第一个问题"><a href="#遇到的第一个问题" class="headerlink" title="遇到的第一个问题"></a>遇到的第一个问题</h2><pre><code>从`github`上 拉取的一份demo，死活运行不了，一直报错，
@@ -246,7 +264,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="React-Native初探遇到的问题" data-title="" data-url="www.huangbingqi.com/2017/04/03/React-Native初探遇到的问题/"></div>
+	<div class="ds-thread" data-thread-key="React-Native初探遇到的问题" data-title="React-Native初探遇到的问题" data-url="www.huangbingqi.com/2017/04/03/React-Native初探遇到的问题/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -3,15 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>categories | BQ之殿的博客</title>
+  <title>使用genstring和NSLocalizedString实现App文本的本地化 | BQ之殿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="www.huangbingqi.com/categories/index.html">
+  <meta name="description" content="iOS提供了简便的方法来实现本地化，其中用的最多的就是NSLocalizedString。首先查看下NSLocalizedString是什么：
+NSLocalizedString简介123#define NSLocalizedString(key,comment)[[NSBundle mainBundle]localizedStringForKey:(key) value:@&quot;&quot; table:ni">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用genstring和NSLocalizedString实现App文本的本地化">
+<meta property="og:url" content="www.huangbingqi.com/2015/08/28/NSLocalizedString实现App文本的本地化/index.html">
 <meta property="og:site_name" content="BQ之殿的博客">
-<meta property="og:updated_time" content="2015-07-31T02:44:06.000Z">
+<meta property="og:description" content="iOS提供了简便的方法来实现本地化，其中用的最多的就是NSLocalizedString。首先查看下NSLocalizedString是什么：
+NSLocalizedString简介123#define NSLocalizedString(key,comment)[[NSBundle mainBundle]localizedStringForKey:(key) value:@&quot;&quot; table:ni">
+<meta property="og:updated_time" content="2017-04-03T06:35:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="使用genstring和NSLocalizedString实现App文本的本地化">
+<meta name="twitter:description" content="iOS提供了简便的方法来实现本地化，其中用的最多的就是NSLocalizedString。首先查看下NSLocalizedString是什么：
+NSLocalizedString简介123#define NSLocalizedString(key,comment)[[NSBundle mainBundle]localizedStringForKey:(key) value:@&quot;&quot; table:ni">
   
     <link rel="alternative" href="/atom.xml" title="BQ之殿的博客" type="application/atom+xml">
   
@@ -167,11 +173,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="categories-undefined" class="article article-type-categories" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-NSLocalizedString实现App文本的本地化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/categories/index.html" class="article-date">
-  	<time datetime="2017-03-20T14:10:02.000Z" itemprop="datePublished">2017-03-20</time>
+      <a href="/2015/08/28/NSLocalizedString实现App文本的本地化/" class="article-date">
+  	<time datetime="2015-08-27T16:00:00.000Z" itemprop="datePublished">2015-08-28</time>
 </a>
     </div>
   
@@ -184,7 +190,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      使用genstring和NSLocalizedString实现App文本的本地化
     </h1>
   
 
@@ -192,6 +198,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/genstring/">genstring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS开发/">iOS开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/本地化/">本地化</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -200,13 +210,64 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>iOS提供了简便的方法来实现本地化，其中用的最多的就是NSLocalizedString。<br>首先查看下NSLocalizedString是什么：</p>
+<h2 id="NSLocalizedString简介"><a href="#NSLocalizedString简介" class="headerlink" title="NSLocalizedString简介"></a>NSLocalizedString简介</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define NSLocalizedString(key,comment)</span></div><div class="line"></div><div class="line">[[NSBundle mainBundle]localizedStringForKey:(key) value:@<span class="string">""</span> table:nil];</div></pre></td></tr></table></figure>
+<p>这是一个宏，本质上调用了函数localizedStringForKey:这样，这个宏做的其实就是在当前bundle中查找资源文件名Localizable.strings中键值key所指向的字符串，这样就不难理解还有诸如：NSLocalizedStringFromTable的宏了。</p>
+<a id="more"></a>
+<h3 id="举栗子"><a href="#举栗子" class="headerlink" title="举栗子"></a>举栗子</h3><p>在不考虑本地化的情况下，外面如果在代码中给一个Button定义title，一般会这样写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1 button.titleLabel.text = @<span class="string">"btn_title"</span>;</div></pre></td></tr></table></figure>
+<p>当虚考虑本地化的问题时，把要显示给用户看的字符串做如下修改：（对于内部使用的字符串就用不着本地化了）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1</div><div class="line">button.titileLabel.text = NSLocalizedString(@<span class="string">"btn_title"</span>,@<span class="string">"按钮title"</span>);</div></pre></td></tr></table></figure></p>
+<p>NSLocalizedString是一个定义在NSBundle.h中的宏，用途是寻找当前系统语言对应的Localizable.strings文件中的某个key的值。<br>第一个参数是key的名字，第二个参数是对这个“键值对”的注释，在用genstrings工具生成Loclizable.strings文件时会自动加上去。<br>到目前为止，外面还没有生成Localizable.strings文件，这个一个逆向的过程，也就是先写好调用过程，再生成strings资源文件。</p>
+<h3 id="利用genstrings工具"><a href="#利用genstrings工具" class="headerlink" title="利用genstrings工具"></a>利用genstrings工具</h3><p>当外面把所有的.m文件都修改好以后，就该genstring工具了。</p>
+<ul>
+<li>启动终端，进入工程所在的目录.</li>
+<li>新建两个目录，推荐放在资源目录下</li>
+</ul>
+<blockquote>
+<p>目录名会作用到Localizable.strings文件对应的语言，不能写错了。这里zh-Hans指简体中文，注意不能用zh.lproj表示。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 mkdir zh-Hans.lproj</div><div class="line">2 mkdir en.lproj</div></pre></td></tr></table></figure>
+<ul>
+<li>生成Localizable.strings文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 genstrings -o zh-Hans.lproj *.m</div><div class="line">2 genstrings -o en.lproj *.m</div></pre></td></tr></table></figure>
+<blockquote>
+<p>-o&lt;文件夹&gt;，指定生成的Localizable.strings文件放置的目录<br>*.m，扫描所有的.m文件，这里支持的文件还包括.h,.java等.</p>
+</blockquote>
+<ul>
+<li>右键点击工程的Resources目录，选择“New group”,添加两个目录zh-Hans.lproj和en.lproj</li>
+<li>在新建的group中添加刚刚生成的Loclizable.strings文件.</li>
+<li>最后在Localizable.strings文件中，修改每个key所对应的内容，就可以了。</li>
+</ul>
+<p>代码已经上传github，<a href="https://github.com/bingqihuang/BQLocalizableStringExample" target="_blank" rel="external">地址在这</a>.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1.在代码里用NSLocalizedString获取要本地化的字符串.</p>
+<p>2.用genstrings扫描代码文件，生成Localizable.strings,然后加到工程中。</p>
+
       
     </div>
     
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/09/10/Markdown演示/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          MarkDown演示
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/26/mutating method sent to immutable object隐秘报错原因/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mutating method sent to immutable object的隐秘报错</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -230,7 +291,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="categories" data-url="www.huangbingqi.com/categories/index.html"></div>
+	<div class="ds-thread" data-thread-key="NSLocalizedString实现App文本的本地化" data-title="使用genstring和NSLocalizedString实现App文本的本地化" data-url="www.huangbingqi.com/2015/08/28/NSLocalizedString实现App文本的本地化/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -274,7 +335,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
