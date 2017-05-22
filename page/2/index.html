@@ -168,6 +168,66 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-NSLocalizedString实现App文本的本地化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/28/NSLocalizedString实现App文本的本地化/" class="article-date">
+  	<time datetime="2015-08-27T16:00:00.000Z" itemprop="datePublished">2015-08-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/28/NSLocalizedString实现App文本的本地化/">使用genstring和NSLocalizedString实现App文本的本地化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>iOS提供了简便的方法来实现本地化，其中用的最多的就是NSLocalizedString。<br>首先查看下NSLocalizedString是什么：</p>
+<h2 id="NSLocalizedString简介"><a href="#NSLocalizedString简介" class="headerlink" title="NSLocalizedString简介"></a>NSLocalizedString简介</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#define NSLocalizedString(key,comment)</span></div><div class="line"></div><div class="line">[[NSBundle mainBundle]localizedStringForKey:(key) value:@<span class="string">""</span> table:nil];</div></pre></td></tr></table></figure>
+<p>这是一个宏，本质上调用了函数localizedStringForKey:这样，这个宏做的其实就是在当前bundle中查找资源文件名Localizable.strings中键值key所指向的字符串，这样就不难理解还有诸如：NSLocalizedStringFromTable的宏了。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/genstring/">genstring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS开发/">iOS开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/本地化/">本地化</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/08/28/NSLocalizedString实现App文本的本地化/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-mutating method sent to immutable object隐秘报错原因" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

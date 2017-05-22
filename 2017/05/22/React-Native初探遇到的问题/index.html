@@ -5,12 +5,58 @@
   
   <title>BQ之殿的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: ur">
+<meta property="og:type" content="article">
 <meta property="og:title" content="BQ之殿的博客">
-<meta property="og:url" content="www.huangbingqi.com/index.html">
+<meta property="og:url" content="www.huangbingqi.com/2017/05/22/React-Native初探遇到的问题/index.html">
 <meta property="og:site_name" content="BQ之殿的博客">
+<meta property="og:description" content="body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: ur">
+<meta property="og:updated_time" content="2017-05-22T10:31:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BQ之殿的博客">
+<meta name="twitter:description" content="body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: ur">
   
     <link rel="alternative" href="/atom.xml" title="BQ之殿的博客" type="application/atom+xml">
   
@@ -166,9 +212,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-React-Native初探遇到的问题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-React-Native初探遇到的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/05/22/React-Native初探遇到的问题/" class="article-date">
@@ -1200,280 +1244,87 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>React-Native初探遇到的问题</title></head><body><article class="markdown-body"><hr />
+</style><title>React-Native初探遇到的问题</title></head><body><article class="markdown-body"><hr>
 <h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>缘起</h2>
 <pre><code>正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
 其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现在公司内部的也有自己的一套iOS布局框架，也很类似，所以，个人还是蛮容易接受RN的。
 </code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
+<a id="more"></a>
 
-      
-        <p class="article-more-link">
-          <a  href="/2017/05/22/React-Native初探遇到的问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-React-Native初探遇到的问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/04/03/React-Native初探遇到的问题/" class="article-date">
-  	<time datetime="2017-04-02T16:00:00.000Z" itemprop="datePublished">2017-04-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/03/React-Native初探遇到的问题/">React-Native初探遇到的问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><pre><code>正好借着清明节放假，计划着花些时间窥探React-Native的奥妙。
-其实类似这种js动态布局的玩法之前在Android上有玩过，界面布局用json数据来写，将这json数据发送到封装好的一套界面框架，根据json数据来创建对应的View，设置对应的属性。 现在公司内部的也有自己的一套iOS布局框架，也很类似，所以，个人还是蛮容易接受RN的。
+<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>遇到的第一个问题</h2>
+<pre><code>从`github`上 拉取的一份demo，死活运行不了，一直报错，
+![github](http://github.com/unicorn.png "github")
 </code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-	</div>
+<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>解决方案</h2>
+<pre><code>经过半天的调试，修改pakage.json信息，从最新的版本
 
-      
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"react"</span>: <span class="string">"15.4.2"</span>,</div><div class="line">    <span class="string">"react-native"</span>: <span class="string">"0.42.3"</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 
+降到了
+
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"react"</span>: <span class="string">"15.3.2"</span>,</div><div class="line">    <span class="string">"react-native"</span>: <span class="string">"0.38.0"</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+
+一切搞定。
+</code></pre></article></body></html>
       
-        <p class="article-more-link">
-          <a  href="/2017/04/03/React-Native初探遇到的问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/03/React-Native初探遇到的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React-Native初探遇到的问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-
-
-
-
-
-  
-    <article id="post-mac10.10配置MySQL-5.7.10详细步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/07/mac10.10配置MySQL-5.7.10详细步骤/" class="article-date">
-  	<time datetime="2016-01-06T16:00:00.000Z" itemprop="datePublished">2016-01-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/07/mac10.10配置MySQL-5.7.10详细步骤/">mac10.10配置MySQL-5.7.10详细步骤</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><strong>mysql-5.7.x的版本和旧的版本差别还是很大的。安装的时候会生成一个临时密码，一不小心，就忘了记下这个密码了。以下是详细的安装教程。</strong></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql5-7-10/">mysql5.7.10</a></li></ul>
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/07/mac10.10配置MySQL-5.7.10详细步骤/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
-
-
-
-
-  
-    <article id="post-title-macbook删除win7系统后无法合并分区的解决办法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/30/title-macbook删除win7系统后无法合并分区的解决办法/" class="article-date">
-  	<time datetime="2015-10-29T16:00:00.000Z" itemprop="datePublished">2015-10-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/30/title-macbook删除win7系统后无法合并分区的解决办法/">macbook删除win7系统后无法合并分区的解决办法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这个问题算是存在已久的一个问题了。网上一搜也会有各式各样的答案。这里提供一个比较全的帖子：<a href="http://jingyan.baidu.com/article/0eb457e50877d303f1a90531.html" target="_blank" rel="external">http://jingyan.baidu.com/article/0eb457e50877d303f1a90531.html</a></p>
-<p>但是，经过测试，上面的文章提到的办法还是不能解决我的问题。</p>
-<p>我是通过以下的办法来解决的：</p>
-<pre><code>&lt;font size=&quot;6px&quot; color=&quot;#ff0000&quot;&gt;打开终端，输入sudo -s回车，输入密码回车，输入 diskutil cs revert / 回车，重启后再打开磁盘工具分区图右下角就可以往下拉了～&lt;/font&gt;
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macbook/">macbook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/win7/">win7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/双系统/">双系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/合并分区/">合并分区</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="React-Native初探遇到的问题" data-title="" data-url="www.huangbingqi.com/2017/05/22/React-Native初探遇到的问题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-
-  
-    <article id="post-Markdown演示" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/10/Markdown演示/" class="article-date">
-  	<time datetime="2015-09-09T16:00:00.000Z" itemprop="datePublished">2015-09-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/10/Markdown演示/">MarkDown演示</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a href="http://blog.baiwand.com/?post=187">http://blog.baiwand.com/?post=187</a></p>
-<p>本文只是重复敲一次，当做练习，顺便笔记。</p>
-<p>正文：</p>
-<h1 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a><font size="10px" color="#ff0000">大标题</font></h1><p>大标题一般显示工程名，<strong>只要在标题下面跟上====即可。</strong></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MarkDown/">MarkDown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/README-md写法/">README.md写法</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/09/10/Markdown演示/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -1497,8 +1348,8 @@ body .markdown-body
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
